@@ -4,6 +4,10 @@ export class DOMController {
       this.container = document.getElementById(containerId);
   }
 
+  updateDeck(deck) {
+    this.deck = deck;
+  }
+
   render() {
       this.container.innerHTML = ''; // Clear previous content
       const cards2dArray = this.deck.cards;

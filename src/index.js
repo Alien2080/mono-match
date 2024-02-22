@@ -9,15 +9,33 @@ if (process.env.NODE_ENV !== 'production') {
   console.log('Looks like we are in development mode!');
 }
 
-// const deck = new Deck(7);
-const n = 9;
 
-console.log(`Number of cards: ${Deck.calcNumCardsInDeck(n)}`);
-console.log(`Number of symbols in total: ${Deck.calcNumOfSymbols(n)}`);
-console.log(`Number of symbols per card: ${Deck.calcNumSymbolsPerCard(n)}`);
+const deckContainerId = 'cardContainer';
+const sliderContainerId = 'sliderContainer';
 
-const deck = new Deck(7);
-deck.printDeck();
+// Initial deck grid size
+let gridSize = 5;
 
-const domController = new DOMController(deck, 'cardContainer');
+// Initialize deck and DOM controller
+// const deck = new Deck(gridSize);
+const domController = new DOMController(new Deck(gridSize), deckContainerId);
+
+// Function to update deck when slider value changes
+function updateDeck(event) {
+    gridSize = parseInt(event.target.value, 10);
+    try {
+      domController.updateDeck(new Deck(gridSize));
+    }
+    catch
+    {
+
+    }
+    
+    domController.render();
+}
+
+// Event listener for slider change
+document.getElementById(sliderContainerId).addEventListener('input', updateDeck);
+
+// Initial rendering of the deck
 domController.render();
