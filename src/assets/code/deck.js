@@ -4,7 +4,7 @@ import { Card } from "./card";
 
 export class Deck {
   constructor(gridSize) {
-    if (!this.constructor.isPrime(gridSize) || gridSize >= 9) {
+    if (!this.constructor.isPrime(gridSize) || gridSize >= 10) {
         throw new Error("Grid size must be a prime number less than 10.");
     }
     this.gridSize = gridSize;
