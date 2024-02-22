@@ -36,17 +36,25 @@ export class Deck {
     // Vertical line symbols.
     for (let i = 0; i < this.gridSize; i += 1) {
       for (let j = 0; j < this.gridSize; j += 1) {
-        cards2dArray[i][j].addSymbol(icons[i + this.gridSize * this.gridSize]);
+        cards2dArray[i][j].addSymbol(icons[i + this.gridSize]);
         cards2dArray[i][j].addCSSclass(`vertical-line`);
         cards2dArray[i][j].addCSSclass(`vertical-line-${j}`);
       }
     }
 
-    // Diagonal line symbols.
-    // for (let i = 0, j = 0; i < this.gridSize; i += 1, j += 1) {
-    //   cards2dArray[i][j].addSymbol(icons[i + this.gridSize * this.gridSize]);
+// Diagonal line symbols.
+for (let lineNo = 0; lineNo < this.gridSize - 1; lineNo += 1) { // Each line is a new symbol.
+  for (let columnIndexPerLine = 0; columnIndexPerLine < this.gridSize; columnIndexPerLine += 1) { // Draws all the diagonals for each line.
+    // Calculate diagonal line, and add symbols to those cards.
+    for (let i = columnIndexPerLine, j = 0, k = 0; k < this.gridSize; i += 1, j += (lineNo + 1), k += 1) {
+      // Adjust columnIndexPerLine using modulo operator
+      const adjustedColumnIndex = j % this.gridSize;
+      const adjustedRowIndex = i % this.gridSize;
+      cards2dArray[adjustedRowIndex][adjustedColumnIndex].addSymbol(icons[columnIndexPerLine + 2*(this.gridSize)]);
+    }
+  }
+}
 
-    // }
 
     return cards2dArray;
 }
