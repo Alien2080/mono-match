@@ -14,15 +14,39 @@ export class Deck {
   generateCards(icons) {
     const cards2dArray = [];
 
+    // Create cards.
     for (let i = 0; i < this.gridSize; i += 1) {
         const row = [];
         for (let j = 0; j < this.gridSize; j += 1) {
             const card = new Card();
-            card.addSymbol(icons[i * this.gridSize + j % icons.length]);
             row.push(card);
         }
         cards2dArray.push(row);
     }
+
+    // Horizontal line symbols.
+    for (let i = 0; i < this.gridSize; i += 1) {
+      for (let j = 0; j < this.gridSize; j += 1) {
+        cards2dArray[i][j].addSymbol(icons[j]);
+        cards2dArray[i][j].addCSSclass(`horizontal-line`);
+        cards2dArray[i][j].addCSSclass(`horizontal-line-${i}`);
+      }
+    }
+
+    // Vertical line symbols.
+    for (let i = 0; i < this.gridSize; i += 1) {
+      for (let j = 0; j < this.gridSize; j += 1) {
+        cards2dArray[i][j].addSymbol(icons[i + this.gridSize * this.gridSize]);
+        cards2dArray[i][j].addCSSclass(`vertical-line`);
+        cards2dArray[i][j].addCSSclass(`vertical-line-${j}`);
+      }
+    }
+
+    // Diagonal line symbols.
+    // for (let i = 0, j = 0; i < this.gridSize; i += 1, j += 1) {
+    //   cards2dArray[i][j].addSymbol(icons[i + this.gridSize * this.gridSize]);
+
+    // }
 
     return cards2dArray;
 }

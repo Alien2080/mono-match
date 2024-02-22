@@ -13,6 +13,9 @@ export class DOMController {
           row.forEach((card, j) => {
               const cardElement = document.createElement('div');
               cardElement.classList.add('card');
+              card.getCSSclasses().forEach(className => {
+                  cardElement.classList.add(className); // Add CSS classes from Card to cardElement
+              });
               card.getSymbols().forEach(symbol => {
                   const spanElement = document.createElement('span');
                   spanElement.classList.add('material-symbols-outlined');
