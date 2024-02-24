@@ -4,7 +4,7 @@ import { Card } from "./card";
 export class Deck {
   constructor(gridSize) {
     if (!this.constructor.isPrime(gridSize) || gridSize >= 10) {
-        throw new Error("Grid size must be a prime number less than 10.");
+        throw new Error("Grid size must be a prime number less than 8 (i.e. 2, 3, 5, 7).");
     }
     this.gridSize = gridSize;
     this.cards = [];
@@ -41,19 +41,22 @@ export class Deck {
 
     // Diagonal line symbols.
     for (let lineNo = 0; lineNo < this.gridSize - 1; lineNo += 1) { // Each line is a new symbol.
+    // const lineNo = 2;
       for (let columnIndexPerLine = 0; columnIndexPerLine < this.gridSize; columnIndexPerLine += 1) { // Draws all the diagonals for each line.
         // Calculate diagonal line, and add symbols to those cards.
         for (let i = columnIndexPerLine, j = 0, k = 0; k < this.gridSize; i += 1, j += (lineNo + 1), k += 1) {
           // Adjust columnIndexPerLine using modulo operator
           const adjustedColumnIndex = j % this.gridSize;
           const adjustedRowIndex = i % this.gridSize;
-          cards2dArray[adjustedRowIndex][adjustedColumnIndex].addSymbol(icons[columnIndexPerLine + 2*(this.gridSize)]);
+          cards2dArray[adjustedColumnIndex][adjustedRowIndex].addSymbol(icons[columnIndexPerLine + 2*(this.gridSize) + (lineNo*this.gridSize)]);
         }
       }
     }
 
     this.cards = cards2dArray;
   }
+
+
 
   static getUniqueIcons(numIcons) {
     // Shuffle the icon data
@@ -80,7 +83,6 @@ export class Deck {
       case 3:
       case 5:
       case 7:
-      case 9:
         return true;
       default:
         return false;

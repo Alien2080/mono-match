@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // Initial deck grid size
-const gridSize = 2;
+const gridSize = 7;
 
 // Initialize DOM controller
 const domController = new DOMController('content');
