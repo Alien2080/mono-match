@@ -63,17 +63,19 @@ body {
 }
 
 button-container {
-  margin-top: 200px; /* Adjust space before the button as needed */
   transform: translateX(-50%);
 }
 
 .close-button {
-  background-color: transparent;
+  background-color: green;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 30px;
   margin-right: 90px; /* Adjust space before the button as needed */
+  margin-top: 45px;
+  box-shadow: 4px 4px 4px rgb(252, 252, 252);
 }
 
 /* unvisited link */
