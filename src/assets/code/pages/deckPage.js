@@ -121,6 +121,7 @@ export class DeckPage {
 
   renderDrawTwoButton() {
     const button = document.createElement('button');
+    button.classList.add('draw-two-button');
     button.textContent = 'Draw Two Cards';
     button.addEventListener('click', () => {
       const drawnCards = this.drawTwoCards();
