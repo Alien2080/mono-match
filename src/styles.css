@@ -79,6 +79,22 @@ button-container {
   box-shadow: 4px 4px 4px rgb(252, 252, 252);
 }
 
+.draw-two-button {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 30px;
+  margin: 20px;
+  box-shadow: 4px 4px 4px rgb(252, 252, 252);
+}
+
+.draw-two-button:hover {
+  color: rgb(15, 15, 15);
+  box-shadow: 4px 4px 4px rgb(15, 15, 15);
+}
+
 /* unvisited link */
 a:link {
   color: red;
