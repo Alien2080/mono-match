@@ -7,9 +7,12 @@ Draw 2 cards and be the first to find the matching symbol.
 
 ## Maths behind the cards
 Creating the deck provided an interesting challenge: how to make sure each card had exactly 1 matching pair with every other card, using the least amount of symbols on each card face.  
-One solution to this is the [Fano Plane](https://en.wikipedia.org/wiki/Fano_plane): the smallest of the possible planes, constructed via linear algebra as the projective plane over the finite field with two elements. 
+One solution to this is the [Fano Plane](https://en.wikipedia.org/wiki/Fano_plane): the smallest of the possible planes, constructed via linear algebra as the projective plane over the finite field with two elements. The other, larger solutions are the larger grids.  
 
-The Fano plane is represented in this game as the 2x2 grid (4 cards), with 3 extra in the infinite projective plane, for a total of 7 cards, with 3 symbols each.   
+### Fano plane
+The Fano plane is represented in this game as the 2x2 grid (4 cards), with 3 extra in the infinite projective plane, for a total of 7 cards, with 3 symbols each. Comparing the 2x2 deck to the Fano plane diagram the cards are the dots and the lines represent the matching symbols.  
+
+
 ![Fano plane](src/assets/images/Fano_plane.svg)   
 Fano Plane: each dot is one of the 7 cards in the 2x2 grid seen in game.   
 
