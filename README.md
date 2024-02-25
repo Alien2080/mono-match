@@ -1,5 +1,6 @@
 # Mono Match
 Mono matching card game: each pair of cards has exaclty 1 matching pair of symbols, no more no less.  
+[Live Demo](https://alien2080.github.io/mono-match/)  
 Inspired by the card games Spot it! and Dobble.  
 
 ### Objective of the game
