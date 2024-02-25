@@ -41,3 +41,40 @@ body {
 .card i {
   font-size: 20px; /* Adjust icon size as needed */
 }
+
+.transparent-container {
+  position: fixed;
+  width: 68%; /* Adjust width as needed */
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.9); /* Adjust transparency as needed */
+  padding: 20px;
+  border-radius: 10px;
+  color: white; /* Adjust text color as needed */
+  z-index: 1000; /* Ensure the container is on top of other elements */
+}
+
+.transparent-container #container {
+  /* Add specific styles for your container content */
+}
+
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
