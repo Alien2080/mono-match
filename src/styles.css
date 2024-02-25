@@ -45,8 +45,8 @@ body {
 .transparent-container {
   position: fixed;
   width: 68%; /* Adjust width as needed */
-  top: 40%;
-  left: 40%;
+  top: 42%;
+  left: 37%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.9); /* Adjust transparency as needed */
   padding: 20px;
