@@ -12,7 +12,7 @@ export class DOMController {
     this.container.innerHTML = ''; // Clear previous content
     this.createDeckPage(gridSize); 
 
-    this.container.append(DOMController.renderTransparentContainer(DOMController.generateMonoMatchContent()));
+    this.container.append(this.renderTransparentContainer(DOMController.generateMonoMatchContent()));
   }
   
   createDeckPage(gridSize) {
@@ -20,14 +20,14 @@ export class DOMController {
     const deckPageContainer = document.createElement('div');
     deckPageContainer.id = 'deckPageContainer';
     // Append deckPage container to main container.
-    this.container.appendChild(deckPageContainer);
+    this.container.append(deckPageContainer);
 
     // Create deckPage.
     this.deckPage = new DeckPage(new Deck(gridSize), 'deckPageContainer')
     this.deckPage.render();
   }
 
-  static renderTransparentContainer(content) {
+  renderTransparentContainer(content) {
     // Create container element
     const transContainer = document.createElement('div');
     transContainer.classList.add('transparent-container');
@@ -35,7 +35,7 @@ export class DOMController {
     // Set content
     transContainer.appendChild(content);
 
-      // Create button container
+    // Create button container
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('button-container');
 
@@ -44,7 +44,7 @@ export class DOMController {
     closeButton.textContent = 'Close';
     closeButton.classList.add('close-button');
     closeButton.addEventListener('click', () => {
-      document.body.removeChild(transContainer); // Remove container from the DOM when close button is clicked
+      this.container.removeChild(transContainer); // Remove container from the DOM when close button is clicked
     });
 
     // Append close button to button container
@@ -53,8 +53,8 @@ export class DOMController {
     // Append button container to container
     transContainer.appendChild(buttonContainer);
   
-    // Append container to body
-    document.body.appendChild(transContainer);
+    // Return the container
+    return transContainer;
   }
 
   static generateMonoMatchContent() {

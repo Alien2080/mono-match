@@ -750,7 +750,6 @@ const iconData = [
   "textsms",
   "texture",
   "theaters",
-  "three_d_rotation",
   "thumb_down",
   "thumb_down_alt",
   "thumb_up",
@@ -854,7 +853,6 @@ const iconData = [
   "wifi_tethering",
   "work",
   "wrap_text",
-  "youtube"
 ];
 
 export default iconData;
