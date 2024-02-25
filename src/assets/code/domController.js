@@ -62,8 +62,16 @@ export class DOMController {
   
     // Main heading
     const mainHeading = document.createElement('h1');
-    mainHeading.textContent = 'Mono Match';
+    mainHeading.textContent = 'Mono Match  ';
     container.appendChild(mainHeading);
+
+    // Create Material Icon for playing card
+    const cardIcon = document.createElement('i');
+    cardIcon.classList.add('material-symbols-rounded');
+    cardIcon.textContent = 'playing_cards'; // This is the icon name for a playing card
+
+    // Append the icon to the main heading
+    mainHeading.appendChild(cardIcon);
   
     // Description
     const description = document.createElement('p');
