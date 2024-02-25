@@ -19,8 +19,6 @@ export class DeckPage {
     this.container.appendChild(cardDeckContainer);
 
     this.renderCards(cardDeckContainer.id, this.deck);
-
-
   }
 
   renderSlider() {
@@ -30,12 +28,14 @@ export class DeckPage {
 
     sliderContainer.innerHTML = `
       <label for="gridSizeSlider">Grid Size</label>
-      <input type="range" id="sliderContainerId" min="2" max="7" value="${this.deck.cards.length}" list="markers" />
+      <input type="range" id="sliderContainerId" min="2" max="13" value="${this.deck.cards.length}" list="markers" />
       <datalist id="markers">
         <option value="2"></option>
         <option value="3"></option>
         <option value="5"></option>
         <option value="7"></option>
+        <option value="11"></option>
+        <option value="13"></option>
       </datalist>`;
 
     // Add event listener for slider change.
@@ -73,7 +73,7 @@ export class DeckPage {
   
         card.getSymbols().forEach(symbol => {
           const spanElement = document.createElement('span');
-          spanElement.classList.add('material-symbols-outlined');
+          spanElement.classList.add('material-symbols-rounded');
           spanElement.textContent = symbol;
   
           // Randomly change icon color
@@ -137,7 +137,7 @@ export class DeckPage {
   
         card.getSymbols().forEach(symbol => {
           const spanElement = document.createElement('span');
-          spanElement.classList.add('material-symbols-outlined');
+          spanElement.classList.add('material-symbols-rounded');
           spanElement.textContent = symbol;
   
           // Randomly change icon color

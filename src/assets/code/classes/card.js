@@ -1,7 +1,6 @@
 export class Card {
   constructor(){
     this.symbols = [];
-    this.cssClasses = [];
   }
 
   getSymbols() {
