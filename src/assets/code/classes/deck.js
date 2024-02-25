@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import iconData from "../../../icons";
 import { Card } from "./card";
 
@@ -32,21 +33,18 @@ export class Deck {
         cards2dArray.push(row);
     }
 
-    const row = [];
     for (let i = 0; i < this.gridSize + 1; i += 1) { 
       const card = new Card();
-      row.push(card);
-      
+      infiniteProjectivePlane.push(card);     
     }
-    infiniteProjectivePlane.push(row);
-
+    
     // Implementation of Finite projective planes.
     // Horizontal line symbols.
     for (let i = 0; i < this.gridSize; i += 1) {
       for (let j = 0; j < this.gridSize; j += 1) {
         cards2dArray[i][j].addSymbol(icons[j]);      
       }
-      infiniteProjectivePlane[0][0].addSymbol(icons[i]);
+      infiniteProjectivePlane[0].addSymbol(icons[i]);
     }
 
     // Vertical line symbols.
@@ -54,7 +52,7 @@ export class Deck {
       for (let j = 0; j < this.gridSize; j += 1) {
         cards2dArray[i][j].addSymbol(icons[i + this.gridSize]);
       }
-      infiniteProjectivePlane[0][1].addSymbol(icons[i + this.gridSize]);
+      infiniteProjectivePlane[0].addSymbol(icons[i + this.gridSize]);
     }
 
     // Diagonal line symbols.

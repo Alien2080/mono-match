@@ -13,7 +13,6 @@ One solution to this is the [Fano Plane](https://en.wikipedia.org/wiki/Fano_plan
 ### Fano plane
 The Fano plane is represented in this game as the 2x2 grid (4 cards), with 3 extra in the infinite projective plane, for a total of 7 cards, with 3 symbols each. Comparing the 2x2 deck to the Fano plane diagram the cards are the dots and the lines represent the matching symbols.  
 
-
 ![Fano plane](src/assets/images/Fano_plane.svg)   
 Fano Plane: each dot is one of the 7 cards in the 2x2 grid seen in game.   
 

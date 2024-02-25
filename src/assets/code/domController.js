@@ -12,7 +12,7 @@ export class DOMController {
     this.container.innerHTML = ''; // Clear previous content
     this.createDeckPage(gridSize); 
 
-    this.container.append(this.renderTransparentContainer(DOMController.generateMonoMatchContent()));
+    this.container.append(this.renderTransparentContainer(DOMController.generateReadMeContent()));
   }
   
   createDeckPage(gridSize) {
@@ -57,7 +57,7 @@ export class DOMController {
     return transContainer;
   }
 
-  static generateMonoMatchContent() {
+  static generateReadMeContent() {
     const container = document.createElement('div');
   
     // Main heading
