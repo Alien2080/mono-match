@@ -35,7 +35,11 @@ export class DOMController {
     // Set content
     transContainer.appendChild(content);
 
-     // Create close button
+      // Create button container
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('button-container');
+
+    // Create close button
     const closeButton = document.createElement('button');
     closeButton.textContent = 'Close';
     closeButton.classList.add('close-button');
@@ -43,8 +47,11 @@ export class DOMController {
       document.body.removeChild(transContainer); // Remove container from the DOM when close button is clicked
     });
 
-    // Append close button to container
-    transContainer.appendChild(closeButton);
+    // Append close button to button container
+    buttonContainer.appendChild(closeButton);
+
+    // Append button container to container
+    transContainer.appendChild(buttonContainer);
   
     // Append container to body
     document.body.appendChild(transContainer);
