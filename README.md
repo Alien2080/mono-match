@@ -21,7 +21,7 @@ Great video that probable explains it better than I can: [How does Dobble (Spot 
 
 ## Planned features
 ### solo proof of concept  
-- [x] create deck using 2D array and fano plane  
+- [x] create deck using 2D array and infinite projective plane 'bonus' cards  
 - [ ] symbols always same colour
 - [ ] symbols positioned randomly on card
 - [ ] simple text explanation on screen
